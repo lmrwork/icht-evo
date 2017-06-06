@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index",
+    "product": "pm2 start index.js -i 4 --watch",
+    "stop": "pm2 stop all"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.2.0"
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "pm2": "^2.4.6",
+    "purify-css": "^1.2.2"
   }
 }
