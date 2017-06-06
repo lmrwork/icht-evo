@@ -9,15 +9,14 @@ evo.use(bodyParser({
   formLimit: '10mb'
 }));
 
-const console = require('console');
-
-const purifycss = require("purify-css")
+const console = require("console");
+const purifycss = require("purify-css");
 
 router.get('/', ctx => {
-  ctx.redirect('/evo');
-})
+  ctx.redirect('/purifycss');
+});
 
-router.post('/evo', ctx => {
+router.post('/purifycss', ctx => {
   const html = ctx.request.body.html;
   const css = ctx.request.body.css;
   const opt = {minify: true};
@@ -26,7 +25,7 @@ router.post('/evo', ctx => {
   } else {
     ctx.body = `POST DATA ERROR :(`;
   }
-})
+});
 
 evo
   .use(router.routes())
